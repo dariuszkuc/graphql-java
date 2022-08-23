@@ -846,8 +846,9 @@ type Query {
 
         def schema = TestUtil.schema("""
             scalar Foo
+            directive @myDirective(foo: Foo) on FIELD_DEFINITION
             type Query {
-                field : Foo
+                field : Foo @myDirective
             }
 """)
 
